@@ -14,10 +14,12 @@ def convertBuildContext2Gyp(build):
     assert len(build.all_task_gen), 1
 
     result = dict(
-      targets=dict(
-        target_name=build.all_task_gen[0].target,
-        sources=[build.all_task_gen[0].source]
-      )
+      targets=[
+        dict(
+            target_name=build.all_task_gen[0].target,
+            sources=[build.all_task_gen[0].source]
+        )
+      ]
     )
     return result
 
